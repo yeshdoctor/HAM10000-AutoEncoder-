@@ -1,0 +1,67 @@
+<!-- The structure for this template is code adapted from https://cs.nyu.edu/~deigen/depth/ -->
+<!-- Please site this website if made public -->
+<HTML>
+<HEAD>
+<title>Insights From HAM10000 Classification Using Learned Compression</title>
+<LINK REL="stylesheet" HREF="style.css">
+</HEAD>
+<BODY bgcolor="white">
+<center>
+<h2>Insights From HAM10000 Classification Using Learned Compression</h2>
+<h3>Yesh Doctor
+</h3>
+<h4>
+yesh.doctor<!-- x -->@<!-- -->duke.<!-- h -->edu
+</h4>
+<p>
+<table border=0 width="25%">
+<tr>
+<!-- Provide link to your paper below -->
+<td align="center"><a href="https://github.com/yeshdoctor/BME548-Final-Project/blob/main/548_Final_Project.pdf"><font size="+1">Paper Link</font></a>
+</tr>
+</table>
+
+<!-- Provide link to your "teaser figure - this should summarize your findings at a glace" -->
+<p>
+<img src="T2.png" width="60%">
+<p>
+<table width="80%">
+<tr><td align="left">
+<p>
+
+
+Neural image compression (NIC) is quickly evolving into a robust and dynamically tunable method for compressing images. In this paper, we sought to investigate how NIC can be used to inform the optimization of inputs for a classification scheme, specifically using the HAM10000 skin lesion dataset. First, we built a classifier on Google's Inception V3 architecture, trained on the data set, and report a test accuracy of 92.1%. Then, we created a convolutional autoencoder with latent-space representing 1.5X, 3X, and 6X compression of the image. All three autoencoders could reproduce the original image with high fidelity. Upon jointly training the autoencoders (1.5X, 3X, 6X) with the classifier in a single model architecture, the fully connected model containing the 3X autoencoder performed the best, with a test accuracy of 82.6%. Upon investigating images before they are passed between the autoencoder and classifier, it appeared that the auto-encoder solely preserved the edges between the skin lesion and its background. Confusion matrix analysis revealed the model performed poorest on lesions with poor lesion-background contrast. This can be used to inform compression schemes that only encode edges, or physical layer optimization to heighten edge contrast before passing into a classifier.
+<p>
+<img src="Teaser.png" width="60%">
+<p>
+<table width="80%">
+<tr><td align="left">
+<p>
+  The first image is what the computer "sees" as an image before it classifies with the joint classification scheme.
+  This image shows how the autoencoder reconstructs the original image.
+
+<p>
+Github Repository <a href="https://github.com/yeshdoctor/BME548-Final-Project">here</a>.
+<tr><td align="center">
+<br>
+
+<!-- Provide link to your write-up -->
+<tr><td align="left">
+Paper:
+<ul>
+<li><a href="https://github.com/yeshdoctor/BME548-Final-Project/blob/main/548_Final_Project.pdf"><font size="+1">Paper PDF</font></a>
+</ul>
+
+<tr><td align="left">
+Code and Data:
+<ul>
+<li>Code: <a href="https://github.com/yeshdoctor/BME548-Final-Project/blob/main/Final_Project.ipynb">link</a>
+<li>Data: <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T">link</a>
+</ul>
+
+</table>
+</center>
+
+
+
+</BODY>
